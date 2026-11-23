@@ -4,5 +4,9 @@ function increment(n) {
 }
 
 function decrement(n) {
-  return n - 1;
+  return Math.max(0, n - 1);
+}
+
+function reset() {
+  return 0;
 }

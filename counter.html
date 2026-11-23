@@ -9,22 +9,30 @@
   <p id="count">0</p>
   <button id="inc" type="button">+1</button>
   <button id="dec" type="button">-1</button>
+  <button id="reset" type="button">リセット</button>
   <p><a href="index.html">トップへ戻る</a></p>
   <script src="counter.js"></script>
   <script>
     var countEl = document.getElementById("count");
+    var decEl = document.getElementById("dec");
     var count = 0;
     function render() {
       countEl.textContent = String(count);
+      decEl.disabled = count <= 0;
     }
     document.getElementById("inc").addEventListener("click", function () {
       count = increment(count);
       render();
     });
-    document.getElementById("dec").addEventListener("click", function () {
+    decEl.addEventListener("click", function () {
       count = decrement(count);
       render();
     });
+    document.getElementById("reset").addEventListener("click", function () {
+      count = reset();
+      render();
+    });
+    render();
   </script>
 </body>
 </html>
