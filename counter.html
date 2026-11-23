@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>カウンター</title>
+</head>
+<body>
+  <h1>カウンター</h1>
+  <p id="count">0</p>
+  <button id="inc" type="button">+1</button>
+  <button id="dec" type="button">-1</button>
+  <p><a href="index.html">トップへ戻る</a></p>
+  <script src="counter.js"></script>
+  <script>
+    var countEl = document.getElementById("count");
+    var count = 0;
+    function render() {
+      countEl.textContent = String(count);
+    }
+    document.getElementById("inc").addEventListener("click", function () {
+      count = increment(count);
+      render();
+    });
+    document.getElementById("dec").addEventListener("click", function () {
+      count = decrement(count);
+      render();
+    });
+  </script>
+</body>
+</html>
